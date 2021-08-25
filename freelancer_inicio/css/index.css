@@ -1,0 +1,307 @@
+:root {
+    --principal: rgb(145, 134, 184);
+    --secundario: rgb(255, 240, 108);
+    --blanco: #ffffff;
+    --oscuro: #212121;
+    --gris: rgb(209, 209, 212);
+
+}
+
+html{
+    scroll-snap-type: y mandatory;  /*para deslizarse de a partes*/
+    font-size: 62.6%;
+    box-sizing: border-box; /* sirve para ajustar tamaños box model, que la img tenga el tamaño que ponemos sin importar el padding*/
+}
+
+*, *:before, *:after { /*aplica BOXSIZING en todo el codigo html*/
+    box-sizing: inherit;
+}
+
+body{
+    font-size: 1.5rem; 
+    font-family: sans-serif;
+    font-weight: 750;
+    background-image: linear-gradient(to top, var(--gris) 0%, var(--blanco) 100%  );
+
+}
+
+main{
+    background-color: var(--blanco);
+    margin: 4rem;
+    margin-inline: 10%;
+}
+
+main{ /*sombra de caja, CSSMATIC*/
+    -webkit-box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.32);
+    -moz-box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.32);
+    box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.52);
+
+}
+
+header{
+    background-color: var(--blanco);
+    padding: 0.2rem;
+}
+
+h1{
+    text-align: center;         /*poner texto al medio*/
+    font-size: 3rem;            /*tamaño de fuente*/
+    color: white;    /*color con variante*/
+    font-weight: 700;           /*grosor de fuente, 400 es lo normal o bold */ 
+}
+
+h1 span{
+    font-size: 2rem;
+}
+
+h2{
+    font-size: 2.5rem;
+    padding-top: 2rem;
+}
+
+h3{
+    font-size: 2rem;
+}
+
+h1, h2, h3{
+    text-align: center;
+    color: var(--oscuro);
+}
+
+.boton, .boton2{
+    background-color: var(--secundario); /*aplica al fondo, la forma del boton*/
+    color: black; /*aplica al tecto pq al final el objeto es el texto*/
+    padding: 1rem;
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    text-transform: uppercase; /*lo hace mayusculas*/
+    border-radius: 0.5rem; /*esquinas redondeadas*/
+    border: none;
+    text-decoration: none;
+    text-align: center;
+    box-shadow: 0px 3px 0px 2px rgb(255, 240, 108, 0.6)  ;
+
+
+}
+
+
+.fondo{ /*elegimos la clase del div para darle un fondo a todo*/
+    background-image: url(../img/hero.jpg); /*le dimos el fondo a todo, y con los dos puntos cambiamos de la carpeta de css a la de img donde estaba la imagen*/
+    background-repeat: no-repeat; /* con esto decimos que la imagen no se repita por el tamaño si se queda corto de espacio*/
+    background-size: cover; /*la img toma todo el ancho disponible*/
+    height:40rem;
+    position: relative; /*al padre se le coloca relativo*/
+}
+
+
+.contenido h2, /*seleccionamos dos elementos del mismo padre, solo con una coma*/
+.contenido p {
+    color: var(--blanco);
+    margin-top: 6rem;
+}
+
+.contenido h2{
+    font-size: 4rem;
+}
+
+.contenedor{
+    margin: auto 0;
+    background-color: var(--secundario);
+}
+
+.navegacion-principal{
+    background-color: var(--secundario);
+    display: flex; /*permite activar justify*/
+    flex-direction: row; /*por defeto es row (que indica que vayan de izq a dereha), puede ser row-reverse(der-izq), column(arriba-abajo), column-reverse(abajo-arriba)*/
+    /*al usar COLUMN, no se aplica justify-content, en su lugar se usa align-items: ; */
+    justify-content: space-around; /*permite mover los elemento de manera horizontal, space-between distribuye los elementos*/
+                    /*space-evely/around/between*/
+    box-shadow:  0 0 10px #212121;
+
+
+}
+
+.navegacion-principal a{
+    color: black;
+    padding: 1rem;
+    text-decoration: none; /*elimina el subrayado o cualquier decoracion de texto*/
+}
+
+.navegacion-principal a:hover{
+    /* el hover nos sirve para darle la animacion cuando se coloca el cursor sobre el boton */
+    background-color: var(--principal); 
+    padding: 1rem;
+    
+}
+.contenido{
+    background-color: rgba(0,0,0, .7 ); /*el 0.5 es la transparencia del negro, va de 0 a 1*/
+    position: absolute; /*al ser hijo, se le coloca absoluta respecto al padre que es el que es relativo a algun cambio*/
+    width: 100%;
+    height: 100%;
+
+    display: flex;      
+    flex-direction: column;
+    /* con esto colocamos los elementos uno al lado del otro y luego en una columna para aplicar propiedades a tds juntos */
+
+    align-items: center;
+    /* no se pone el justifycontent porq es verticalmente */
+
+}
+
+.lugar{
+    display: flex;
+    align-items: center;
+}
+
+.servicios{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    /*con esto alineamos los circulos al medio, se aplica en el padre porque hablamos de items,
+    por lo tanto no se aplica al item en si*/
+}
+
+.servicios h3{
+    font-weight: normal;
+
+}
+
+.servicios p{
+    line-height: 2;
+    text-align: center;
+}
+
+
+
+.iconos{
+    width: 15rem;
+    height: 15rem;   /*nos da el tamaño del circulo*/
+    background-color: var(--secundario);
+    border-radius: 100%; /*nos crea un circulo*/
+    display: flex;
+    justify-content: space-evenly;/*horizontal, cun una separacion entre iconos*/
+    align-items: center; /*con el display alineamos los iconos al centro vertical y horizontalmente*/
+
+}
+
+.s1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+    
+.formulario{
+
+    background-color: rgb(116, 114, 114);
+    border-radius: 1rem;
+    width: min( 60rem, 90% ); 
+    /*nos dice que el tamaño va a ser el menor, en caso de que sea menor 60rem q 100%,
+    se va a elegir ese, sino toma el 100%, en dispositivos pequeños. Se ajusta */
+
+    padding: 1rem;
+}
+
+.formulario label{
+    color: white;
+}
+
+.formulario legend{
+    text-transform: uppercase; /*mayusculas*/
+    color: var(--secundario);
+    text-align: center;
+    padding-top: 1rem;
+}
+
+.formulario fieldset{
+    border: none;
+
+    /*para quitar el recuadro a los formularios*/
+
+}
+
+.campos label{
+    padding-block: 1rem;
+    display: block;
+
+}
+
+.input-text{  /*el tamaño de los espacios a completar*/
+    border: none;
+    padding: 1rem;
+    width: 100%; /*el largo, para que ocupe toda la pantalla*/
+    border-radius: .5rem;
+}
+
+.boton:hover{
+    cursor: pointer;
+}
+
+
+footer{
+    display: flex;
+    justify-content: center;
+    padding-top: 2rem;
+    font-weight: 300;
+}
+
+
+
+
+/* MEDIA QUERY---------------------------------------------------------------------------------------------*/
+
+@media(max-width: 425px) { /*tamaño Maximo de celular, se aplican las condiciones mayores a este tamaño*/
+    body{
+        font-size: 1.2rem;
+    }
+
+    .navegacion-principal {
+        flex-direction: column; /*con esto cambiamos de fila a columna para que sea mas facil en celular*/
+        align-items: center; /*nos centra los elementos, justify center no sirve porque cambiamos de fila a COLUMNA*/
+    }
+
+    .navegacion-principal a:hover{
+        padding-inline: 100%; /*para que el color de animacion se aplique por todo el ancho de la pantalla*/
+    }
+
+    h1{
+        /*aca se pone una condicion que va a aplicar a pantallas mayores a 480px*/
+        font-size: 2rem;
+
+    }
+    h1 span{
+        font-size: 1.2rem;
+    }
+
+    main{
+        margin: 0%;
+    }
+
+}
+
+@media (max-width: 768px) {
+    .boton{
+        width: 90%;
+
+    }
+    .boton2{
+        width: 100%;
+    }
+
+}
+
+@media (min-width: 768px) {
+    .grid{ /*es como float o flexbox, divide por secciones*/
+        margin: 2rem;
+        display: grid; /*lo activa*/
+        grid-template-columns: 1fr 1fr 1fr; /*divide el contenido en fracciones del total, en eset caso es 33.3$ cada una*/
+        grid-template-columns: repeat(3, 1fr); /*repite lo que queremos, primero cantidad y desp lo que queremos*/
+        
+
+    
+    }
+}
+
+
+
+
